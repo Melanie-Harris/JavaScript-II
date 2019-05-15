@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+const sentence = 'Melanie was here!';
+
+function returnMel(statement) {
+  let phrase= "Breaking News!"
+  return `${phrase} ${sentence} `;
+  
+}
+// sentence;
+console.log(returnMel());
+console.log(phrase);
+// returnMel(console.log);
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
