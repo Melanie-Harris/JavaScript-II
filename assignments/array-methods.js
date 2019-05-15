@@ -89,19 +89,11 @@ console.log(largeShirtsOnly);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal 
 //array and log the result
-
-
 // let ticketPriceTotal = [];
 
     let ticketPriceTotal= runners.reduce((allDonations, name) => {
-        if (allDonations[name.donation]) {
-            allDonations[name.donation]++;
-        }
-        else {
-            allDonations[name.donation] = 1;
-        }
-    });
-
+      return allDonations + name.donation
+    }, 0);
     console.log(ticketPriceTotal);
  
 
@@ -113,14 +105,29 @@ console.log(largeShirtsOnly);
 
 // Problem 1
 //Use for each to list all runner's first name associated Id.
+// document each runners ID with name
+let idName = [];
 
-let fullName = [];
-
-runners.forEach(({ first_name, last_name }) => {
-    fullName.push(`${first_name} ${last_name}.`)
+runners.forEach(({id, first_name}) => {
+    idName.push(`${id} ${first_name}`)
 });
-console.log(fullName);
+console.log(idName);
+
 
 // Problem 2
+//filtered out information for email address sbaine1d@intel.com
+const emailsOnly = runners.filter(function (emailAddies) {
+    return emailAddies.email === "sbaine1d@intel.com"
+});
+
+console.log(emailsOnly);
 
 // Problem 3
+//Set all last names to complete lowercase for simplicity
+let nameL = [];
+
+runners.map(({last_name}) => {
+    nameL.push(`${last_name.toLowerCase()}`)
+});
+
+console.log(nameL);
